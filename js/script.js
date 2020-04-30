@@ -98,4 +98,20 @@ let tab = document.querySelectorAll('.info-header-tab'),
 
   }
   srtClock('timer', deadTime);
+
+  // Modal
+
+  let  modalWindow = document.querySelector('.overlay'),
+       open = document.querySelector('.more'),
+       close = document.querySelector('.popup-close');
+       open.addEventListener('click', function(){
+           modalWindow.style.display = "block";
+           this.classList.add('more-splash');
+           document.body.style.overflow = 'hidden';
+       });
+       close.addEventListener('click', function(){
+        modalWindow.style.display = "none";
+        open.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
 });
