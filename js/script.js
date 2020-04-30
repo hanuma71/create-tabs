@@ -57,17 +57,30 @@ let tab = document.querySelectorAll('.info-header-tab'),
           timeInterval = setInterval(updateClock, 1000);
           function updateClock(){
             let t = getTimeRemaining(endtime);
-            showHours.textContent =  t.hours;
-            if(t.minutes < 10){
-                showMinutes.textContent = '0' + t.minutes;
-            }else{
-                showMinutes.textContent = t.minutes;
-            } 
-            if(t.seconds < 10){
-                showSeconds.textContent = '0' + t.seconds;
-            }else{
-                showSeconds.textContent = t.seconds;
-            } 
+
+            function addZero(num){
+                if(num <= 9) {
+                    return '0' + num;
+                } else return num;
+            };
+
+         showHours.textContent = addZero(t.hours);
+         showMinutes.textContent = addZero(t.minutes);
+         showSeconds.textContent = addZero(t.seconds);
+
+
+
+            // showHours.textContent =  t.hours;
+            // if(t.minutes < 10){
+            //     showMinutes.textContent = '0' + t.minutes;
+            // }else{
+            //     showMinutes.textContent = t.minutes;
+            // } 
+            // if(t.seconds < 10){
+            //     showSeconds.textContent = '0' + t.seconds;
+            // }else{
+            //     showSeconds.textContent = t.seconds;
+            // } 
            
            
 
